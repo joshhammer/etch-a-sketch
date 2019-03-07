@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: slategray;
+}
+
+#container {
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: repeat(16, 6.25%);
+    grid-template-rows: repeat(16, 6.25%);
+    
+}
+
+
+.squares {
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+}
+
+.hovered {
+    background-color: aquamarine;
+}
