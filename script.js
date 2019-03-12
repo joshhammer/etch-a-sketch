@@ -1,6 +1,8 @@
 
 const container = document.querySelector("#container");
 const resetButton = document.querySelector('#reset');
+let squaresPerSide;
+
 
 // this function generates ONE random color
 function generateRandomColor(){
@@ -13,9 +15,17 @@ function generateRandomColor(){
 
 // this function creates the square grid
 function createGrid(){
-    for(let i = 0; i < (16*16); i++){
+
+    squaresPerSide = Number(prompt("How many squares per side?"));
+
+    container.style.gridTemplateColumns = 'repeat(' + squaresPerSide + ', 1fr)';
+    container.style.gridTemplateRows = 'repeat(' + squaresPerSide + ', 1fr)';
+
+    for(let i = 0; i < (squaresPerSide*squaresPerSide); i++){
         let square = document.createElement('div');
         square.classList.add('squares');
+        square.style.width = '"' + (540/squaresPerSide) + 'px' + '"';
+        square.style.height = '"' + (540/squaresPerSide) + 'px' + '"';
         container.appendChild(square);
 
         let randomColor = generateRandomColor();
@@ -26,13 +36,19 @@ function createGrid(){
     }
 }
 
+
+
 createGrid();
 
 
-let squares = document.querySelectorAll('.squares');
 resetButton.addEventListener('click', function(){
-    for(i = 0; i < squares.length; i++){
-        squares[i].style.backgroundColor = "transparent";
+    let allSquares = document.querySelectorAll(".squares");
+    console.log(allSquares);
+    console.log(allSquares[0]);
+    for(i = 0; i < allSquares.length; i++){
+        // squares[i].style.backgroundColor = "transparent";
+        container.removeChild(allSquares[i]);
     }
+    createGrid();
 });
 
