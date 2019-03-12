@@ -1,31 +1,81 @@
+:root {
+    --element-background-color: rgb(80, 121, 182);
+    --default-text-color: rgb(252, 214, 0);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+    height: 100%;
+}
+
 body {
-    background-color: slategray;
+    background-color: rgb(149, 172, 194);
+    font-family: "Indie Flower", cursive;
+    font-size: 1.5em;
+}
+
+h1 {
+    margin: 0;
+    padding: 10px 0 0 0;
+    text-align: center;
+    color: var(--default-text-color);
+    background-color: var(--element-background-color);
+}
+
+h4 {
+    padding: 0 0 15px 0;;
+    text-align: center;
+    color: var(--default-text-color);
+    background-color: var(--element-background-color);
 }
 
 #container {
     width: 540px;;
     height: 540px;
-    margin: 0 auto;
-    border: 1px solid red;
+    margin: 50px auto;
+    border: 5px solid rgb(231, 231, 231);
+    border-radius: 10px;
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(48, 1fr);
+    grid-template-rows: repeat(48, 1fr);
     
 }
 
+#reset {
+    font-family: "Indie Flower", cursive;
+    font-size: 1em;
+    display: block;
+    margin: 0 auto;
+    padding: 0.25rem 1rem;
+    border: none;
+    border-radius: 5px;
+    color: var(--default-text-color);
+    background-color: var(--element-background-color);
+    cursor: pointer;
+    box-shadow: 0px 0px 2px 1px rgb(255, 238, 0);
+}
 
-.squares {
+button:focus {
+    outline: 0;
+}
+
+#reset:hover {
+    color: rgb(255, 238, 0);
+    text-shadow: 0px 0px 2px rgb(255, 238, 0);
+}
+
+#reset:active {
+    border: 1px solid rgb(255, 238, 0);
+}
+
+/* .squares {
     border: 1px solid black;
-    /* width: 20px;
-    height: 20px; */
-}
-
-.hovered {
-    background-color: aquamarine;
-}
+    width: 20px;
+    height: 20px;
+} */
